@@ -1,0 +1,19 @@
+
+*q1;
+libname thu '/home/jankishah';
+data pers;
+set thu.personality;
+rename pes36 = pers36;
+run;
+proc corr data=pers alpha nomiss;
+var pers01-pers44;
+run;
+
+*q2;
+proc factor data=pers plots=pathdiagram
+METHOD=prin
+SCREE priors=smc
+ ROTATE=VARIMAX
+ mineigen=1;
+ var pers01-pers44;
+ RUN;
