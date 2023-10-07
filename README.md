@@ -1,0 +1,1 @@
+# Cronbach-s-Alpha-PCA-EFA
